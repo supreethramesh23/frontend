@@ -1,0 +1,125 @@
+<!-- <div *ngIf="products.length > 0; else noProducts">
+    <h2>Product List</h2>
+    <ul>
+        @for(product of products; track $index){
+      <li >
+        
+        <img [src]=product.imageUrl alt="Image"/> <br>
+
+        <strong>{{ product.name }}</strong>: ${{ product.price }}
+        <p>{{product.description}}</p>
+      </li>
+    }
+    </ul>
+  </div>
+  <ng-template #noProducts>
+    <p>No products available.</p>
+  </ng-template> 
+-->
+
+
+
+<!-- navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Shoppers Stop</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <button class="btn btn-outline-primary me-2">Login</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-outline-secondary me-2">Logout</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-outline-info me-2" routerLink="/cart">View Cart</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!--Category-->
+<div class="container-fluid categories-container mt-4 bg-light">
+
+
+  <div class="row">
+    <div class="col-3 text-center box" >
+      <i class="fas fa-mobile-alt fa-2x" ></i>
+      <p>Mobiles</p>
+    </div>
+    <div class="col-3 text-center">
+      <i class="fas fa-tshirt fa-2x"></i>
+      <p>Fashion</p>
+    </div>
+    <div class="col-3 text-center">
+      <i class="fas fa-heart fa-2x"></i>
+      <p>Beauty</p>
+    </div>
+    <div class="col-3 text-center">
+      <i class="fas fa-shopping-basket fa-2x"></i>
+      <p>Grocery</p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+<!-- <div *ngIf="products.length > 0; else noProducts">
+    <h2 class="text-center my-4">Product List</h2>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let product of products" class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img [src]="product.imageUrl" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.description }}</p>
+              <p class="card-text"><strong>₹{{ product.price }}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noProducts>
+    <p class="text-center my-4">No products available.</p>
+  </ng-template> -->
+
+  <div *ngIf="products.length > 0; else noProducts">
+    <h2 class="text-center my-4">Product List</h2>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let product of products" class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img [src]="product.imageUrl" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.description }}</p>
+              <p class="card-text"><strong>₹{{ product.price }}</strong></p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" >Buy Now</button>
+                <button class="btn btn-success" (click)="addToCart(product)" >Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #noProducts>
+    <p class="text-center my-4">No products available.</p>
+  </ng-template>
+  
+  
+  

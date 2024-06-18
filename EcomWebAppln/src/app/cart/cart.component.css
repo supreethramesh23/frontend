@@ -1,0 +1,25 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%; 
+  }
+  
+  .card-img-container {
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-img-top {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain;
+  }
+  
+  .card-body {
+    padding: 1rem; 
+    height: 100%; 
+  }
+  
